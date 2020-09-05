@@ -1,10 +1,11 @@
 package com.github.curriculeon.dao;
 
+
 import com.github.curriculeon.DatabaseConnection;
 import com.github.curriculeon.DatabaseConnectionInterface;
-import com.github.curriculeon.orm.PersonOrm;
 import com.github.curriculeon.model.Person;
-import com.github.curriculeon.utils.PojoToSqlConverter;
+import com.github.curriculeon.model.PersonBuilder;
+import com.github.curriculeon.orm.PersonOrm;
 
 import java.sql.ResultSet;
 import java.util.List;
@@ -30,10 +31,9 @@ public class PersonJdbcRepository extends AbstractJdbcRepository<Long, Person> {
 
     @Override
     public Person update(Person existingEntity, Person newData) {
-        existingEntity.setName(newData.getName());
-        existingEntity.setPassword(newData.getPassword());
-        existingEntity.setEmail(newData.getEmail());
-        return existingEntity;
+        return new PersonBuilder(newData)
+                .setId(existingEntity.getId())
+                .build();
     }
 
     @Override
