@@ -1,6 +1,8 @@
 package com.github.curriculeon.config;
 
-import org.mariadb.jdbc.Driver;
+//import org.mariadb.jdbc.Driver;
+
+import com.mysql.cj.jdbc.Driver;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -17,6 +19,7 @@ public class JpaConfigurator extends AbstractConfiguration {
     public JpaConfigurator(String persistenceUnitName, String... scriptFiles) {
         super(scriptFiles);
         this.persistenceUnitName = persistenceUnitName;
+
         try { // Attempt to register JDBC Driver
             DriverManager.registerDriver(Driver.class.newInstance());
         } catch (InstantiationException | IllegalAccessException | SQLException e1) {

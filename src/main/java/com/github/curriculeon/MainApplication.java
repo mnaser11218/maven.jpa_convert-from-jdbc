@@ -13,7 +13,7 @@ public class MainApplication {
         DatabaseConnection.PRODUCTION_DATABASE.create();
         DatabaseConnection.PRODUCTION_DATABASE.use();
 //        ConfigurationInterface config = new JdbcConfigurator(DatabaseConnection.PRODUCTION_DATABASE);
-        ConfigurationInterface config = new JpaConfigurator("production");
+        ConfigurationInterface config = new JpaConfigurator("mysql");
         config.appendSqlScript("production.person_create-table.sql");
         config.appendSqlScript("production.person_populate-table.sql");
         config.initialize();

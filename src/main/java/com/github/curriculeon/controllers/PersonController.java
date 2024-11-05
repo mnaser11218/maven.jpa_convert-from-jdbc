@@ -25,11 +25,13 @@ public class PersonController extends AbstractController<PersonService> {
 
     @Override
     public void displayAll() {
+        System.out.println("in method");
         console.println(getService()
                 .findAll()
                 .toString()
                 .replaceAll(", ", "\n")
                 .replaceAll("Person\\{", "\n\nPerson\\{"));
+
 
     }
 

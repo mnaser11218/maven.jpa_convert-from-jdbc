@@ -26,9 +26,9 @@ public class DisplayAllTest {
 
     @Test
     public void test() {
+        System.out.println("inside test");
         // given
         PersonController personController = new PersonController(new PersonService(new PersonJpaRepository("testing")));
-
         // when
         personController.displayAll();
 

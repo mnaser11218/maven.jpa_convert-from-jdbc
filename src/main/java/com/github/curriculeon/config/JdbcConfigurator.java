@@ -1,7 +1,8 @@
 package com.github.curriculeon.config;
 
 import com.github.curriculeon.DatabaseConnectionInterface;
-import org.mariadb.jdbc.Driver;
+import com.mysql.cj.jdbc.Driver;
+//import org.mariadb.jdbc.Driver;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

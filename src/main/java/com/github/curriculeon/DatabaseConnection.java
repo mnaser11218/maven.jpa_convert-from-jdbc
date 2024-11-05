@@ -13,14 +13,14 @@ public enum DatabaseConnection implements DatabaseConnectionInterface {
             .setUser("root")
             .setPassword("")
             .setPort(3306)
-            .setDatabaseVendor("mariadb")
+            .setDatabaseVendor("mysql")
             .setHost("127.0.0.1")),
 
     TESTING_DATABASE(new ConnectionBuilder()
             .setUser("root")
             .setPassword("")
             .setPort(3306)
-            .setDatabaseVendor("mariadb")
+            .setDatabaseVendor("mysql")
             .setHost("127.0.0.1"));
 
     private static final IOConsole console = new IOConsole(IOConsole.AnsiColor.CYAN);
